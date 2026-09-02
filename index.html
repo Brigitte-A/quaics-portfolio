@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name -- Portfolio</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Georgia, "Times New Roman", serif; line-height: 1.7; color: #1a1a2e; background: #fdfbf7; }
+
+  /* "grid-template-columns: 260px 1fr" means: sidebar is a fixed 260px, main area takes the rest. */
+  .layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: 100vh;
+  }
+
+  .sidebar {
+    background: #1a1a2e;
+    color: #f0e6d2;
+    padding: 40px 26px;
+  }
+  .sidebar-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #333;
+    display: block;
+    margin: 0 auto 20px;
+  }
+  .sidebar h1 { font-size: 1.3rem; text-align: center; margin-bottom: 6px; }
+  .sidebar-tagline { text-align: center; font-size: 0.85rem; color: #c9b98e; margin-bottom: 30px; }
+  .sidebar h2 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: #c9b98e; margin: 26px 0 10px; }
+  .sidebar ul { list-style: none; font-size: 0.88rem; }
+  .sidebar li { margin-bottom: 8px; }
+  .sidebar a { color: #f0e6d2; text-decoration: none; }
+  .sidebar a:hover { text-decoration: underline; }
+
+  /* Each .skill-bar is a label plus a filled bar. The width percentage on
+     .skill-fill is the only number you need to change to adjust the level. */
+  .skill-bar { margin-bottom: 12px; }
+  .skill-bar-label { font-size: 0.82rem; margin-bottom: 4px; }
+  .skill-track { background: rgba(255,255,255,0.15); border-radius: 100px; height: 6px; overflow: hidden; }
+  .skill-fill { background: #c9b98e; height: 100%; border-radius: 100px; }
+
+  .main-content { padding: 50px 44px; }
+  .main-content h2 {
+    font-size: 1.4rem;
+    color: #1a1a2e;
+    border-bottom: 2px solid #c9b98e;
+    padding-bottom: 8px;
+    margin-bottom: 24px;
+  }
+
+  /* Each .entry is one project or one piece of experience, stacked in order. */
+  .entry { margin-bottom: 30px; }
+  .entry-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 6px; }
+  .entry-header h3 { font-size: 1.1rem; }
+  .entry-date { font-size: 0.82rem; color: #888; font-style: italic; }
+  .entry p { font-size: 0.95rem; color: #333; margin-top: 6px; }
+  .entry a { color: #7a5c00; font-weight: 600; font-size: 0.88rem; }
+  .entry img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    margin-top: 10px;
+    background: #eee;
+    display: block;
+  }
+
+  /* On narrow screens, stack the sidebar above the main content instead of beside it. */
+  @media (max-width: 700px) {
+    .layout { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar">
+    <!-- Upload your photo named headshot.jpg, or change the filename to match yours. -->
+    <img class="sidebar-photo" src="headshot.jpg" alt="Upload headshot.jpg here">
+    <h1>Your Name</h1>
+    <p class="sidebar-tagline">What you are training to become</p>
+
+    <h2>Skills</h2>
+    <!-- Copy one whole .skill-bar block to add another skill. -->
+    <!-- The number in "width: 80%;" controls how full the bar looks, change it to whatever feels honest. -->
+    <div class="skill-bar">
+      <div class="skill-bar-label">Python</div>
+      <div class="skill-track"><div class="skill-fill" style="width: 80%;"></div></div>
+    </div>
+    <div class="skill-bar">
+      <div class="skill-bar-label">Network Security Basics</div>
+      <div class="skill-track"><div class="skill-fill" style="width: 60%;"></div></div>
+    </div>
+    <div class="skill-bar">
+      <div class="skill-bar-label">Data Analysis</div>
+      <div class="skill-track"><div class="skill-fill" style="width: 65%;"></div></div>
+    </div>
+
+    <h2>Contact</h2>
+    <ul>
+      <!-- Replace each link below with your own. -->
+      <li><a href="mailto:you@example.com">Email</a></li>
+      <li><a href="https://linkedin.com/in/yourname" target="_blank">LinkedIn</a></li>
+      <li><a href="https://github.com/yourusername" target="_blank">GitHub</a></li>
+    </ul>
+  </aside>
+
+  <!-- ============ MAIN CONTENT ============ -->
+  <div class="main-content">
+
+    <section>
+      <h2>About Me</h2>
+      <p>Write two or three sentences here about your background, what you are learning, and what you are working toward.</p>
+    </section>
+
+    <br>
+
+    <!-- ============ PROJECTS ============ -->
+    <!-- Copy one whole .entry block to add another project. -->
+    <section>
+      <h2>Projects</h2>
+
+      <div class="entry">
+        <div class="entry-header">
+          <h3>Project One</h3>
+          <span class="entry-date">Month Year</span>
+        </div>
+        <p>What this project does and what you built it with.</p>
+        <!-- Upload a screenshot named portfolio1.jpg -->
+        <img src="portfolio1.jpg" alt="Upload portfolio1.jpg here">
+        <!-- Replace # with a real link to the project or its repository. -->
+        <p><a href="#">View Project &rarr;</a></p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <h3>Project Two</h3>
+          <span class="entry-date">Month Year</span>
+        </div>
+        <p>What this project does and what you built it with.</p>
+        <!-- Upload a screenshot named portfolio2.jpg -->
+        <img src="portfolio2.jpg" alt="Upload portfolio2.jpg here">
+        <p><a href="#">View Project &rarr;</a></p>
+      </div>
+
+    </section>
+
+  </div>
+
+</div>
+
+</body>
+</html>
